@@ -1,0 +1,101 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #002F52;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;    
+}
+
+.signup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.signup {
+    text-decoration: none;
+    font-size: 18px;        
+}
+
+.banner-title {
+    text-align: center;
+    background-color: #002F52;
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 20px 0;
+    margin-bottom: 60px;
+}
+
+.main-container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-weight: 600;
+    font-size: 26px;
+    color: #EB9B00;
+    padding-bottom: 40px;
+}
+
+fieldset {
+    margin-bottom: 30px;
+}
+
+.field-form {
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: block;
+    font-weight: 700;    
+    line-height: 24px;    
+    padding-left: 1em;
+    width: 100%;
+}
+
+.label-form {
+    display: block;
+    padding-bottom: 2px;
+}
+
+.input-form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #002F52;
+}
+
+.double-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fields-title {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 26px;    
+    margin: 20px 0;
+}
+
+button {
+    background-color: #EB9B00;
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 40px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
