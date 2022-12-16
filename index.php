@@ -44,6 +44,7 @@ if(isset($_SESSION["user_id"])) {
     <main class="main-container">
         <div>
             <?php if(isset($user)): ?>
+                <h3 class="main-title">Olá, <?= $user["full_name"] ?>!</h3> 
                 <h3 class="main-title">Você está logado.</h3>                
             <?php else: ?>
                 <h3 class="main-title">Olá!!!</h3>                
