@@ -42,12 +42,37 @@ if (is_null($_POST['phone'])) {
     die("O campo telefone deve ser preenchido.");    
 }
 
+if (strlen($_POST["cep"]) != 8) {
+    die("CEP inválido.");
+}
+
+if (is_null($_POST['street'])) {
+    die("O campo logradouro deve ser preenchido.");    
+}
+
+if (is_null($_POST['house_number'])) {
+    die("O campo número deve ser preenchido.");    
+}
+
+if (is_null($_POST['district'])) {
+    die("O campo bairro deve ser preenchido.");    
+}
+
+if (is_null($_POST['city'])) {
+    die("O campo cidade deve ser preenchido.");    
+}
+
+if (is_null($_POST['country_state'])) {
+    die("O campo estado deve ser preenchido.");    
+}
+
+
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO user (email, password_hash, full_name, cpf, rg, birthday, phone)
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO user (email, password_hash, full_name, cpf, rg, birthday, phone, cep, street, house_number, complement, district, city, country_state)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
@@ -55,14 +80,21 @@ if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sssssss",                  
+$stmt->bind_param("ssssssssssssss",                  
                   $_POST["email"],
                   $password_hash,
                   $_POST["full_name"],
                   $_POST["cpf"],
                   $_POST["rg"],
                   $_POST["birthday"],
-                  $_POST["phone"]
+                  $_POST["phone"],
+                  $_POST["cep"],
+                  $_POST["street"],
+                  $_POST["house_number"],
+                  $_POST["complement"],
+                  $_POST["district"],
+                  $_POST["city"],
+                  $_POST["country_state"]
                 );
                   
 if ($stmt->execute()) {
